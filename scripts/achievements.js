@@ -3,6 +3,7 @@
 ═══════════════════════════════════════ */
 reg('achievements',el=>{
   if(!S.user){go('login');return;}
+  playSound('achievements',0.7);
   const uid=S.user.id;
   const allGames=[GH,GI,GM,GN];
 
