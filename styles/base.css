@@ -1,0 +1,89 @@
+/* ── ROOT VARIABLES ── */
+:root{
+  --deep:#010812;--mid:#061530;--light:#0d2554;
+  --cyan:#4FC3F7;--glow:rgba(79,195,247,.4);
+  --gold:#FFD700;--gold2:#FF8C00;
+  --silver:#C0C0C0;--blue-t:#2196F3;--purple-t:#9C27B0;
+  --card:rgba(224,240,255,.97);--dark-card:rgba(8,20,58,.93);
+  --navy:#0d1b3e;--navy2:#1a3a70;
+  --font:'Assistant',sans-serif;--ftitle:'Secular One',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;font-family:var(--font);direction:rtl;background:var(--deep);color:#fff}
+button{font-family:var(--font);cursor:pointer;border:none;outline:none}
+input,textarea{font-family:var(--font);outline:none}
+canvas{display:block}
+
+/* ── CANVAS BG ── */
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+/* ── APP ── */
+#app{position:relative;z-index:1;width:100%;height:100vh;overflow:hidden}
+
+/* ── SCREEN ── */
+.scr{
+  display:none;position:absolute;inset:0;
+  flex-direction:column;align-items:center;justify-content:center;
+  padding:16px;animation:fadeUp .4s ease;
+}
+.scr.on{display:flex}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── LABEL ── */
+.basad{position:fixed;top:12px;right:14px;font-size:12px;color:rgba(255,255,255,.5);z-index:200;letter-spacing:1px}
+.logo-footer{position:fixed;bottom:10px;left:14px;z-index:200;opacity:.75}
+.copyright{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);font-size:11px;color:rgba(255,255,255,.55);z-index:200;letter-spacing:.4px;white-space:nowrap;pointer-events:none;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+.copyright a{color:inherit;text-decoration:none;pointer-events:auto}
+.copyright a:hover{color:rgba(255,220,140,.95)}
+
+/* ── SCREEN TITLE ── */
+.stitle{
+  font-family:var(--ftitle);font-size:clamp(26px,5vw,54px);
+  text-shadow:0 0 20px rgba(79,195,247,.8),0 2px 8px rgba(0,0,0,.8);
+  display:flex;align-items:center;gap:14px;margin-bottom:20px;text-align:center;
+}
+.sico{font-size:.55em;filter:drop-shadow(0 0 8px #fff)}
+
+/* ── CARD ── */
+.card{
+  background:var(--card);border-radius:28px;padding:28px 32px;
+  box-shadow:0 8px 40px rgba(0,80,200,.25),0 0 0 1.5px rgba(100,180,255,.35);
+  direction:rtl;
+}
+.card-dark{
+  background:var(--dark-card);border-radius:28px;padding:24px;
+  box-shadow:0 8px 40px rgba(0,0,0,.6),0 0 0 1.5px rgba(79,195,247,.3);
+}
+
+/* ── BUTTONS ── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 26px;border-radius:14px;font-size:17px;font-weight:700;
+  cursor:pointer;transition:all .2s;direction:rtl;white-space:nowrap;
+}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy2);transform:translateY(-2px)}
+.btn-full{width:100%}
+.btn-purple{background:linear-gradient(135deg,#4A148C,#6A1B9A);color:#fff}
+.btn-purple:hover{filter:brightness(1.2);transform:translateY(-2px)}
+.btn-sm{padding:8px 16px;font-size:14px;border-radius:10px}
+.btn-lg{padding:16px 34px;font-size:19px;border-radius:18px}
+
+/* ── FORM ── */
+.fg{display:flex;align-items:center;gap:12px;direction:rtl;margin-bottom:14px}
+.fg label{font-size:16px;font-weight:700;color:var(--navy);white-space:nowrap;min-width:80px}
+.fg input{
+  flex:1;padding:11px 14px;border-radius:12px;
+  background:var(--navy);color:#fff;
+  border:2px solid rgba(79,195,247,.3);font-size:16px;direction:rtl;
+  transition:border-color .2s;
+}
+.fg input:focus{border-color:var(--cyan)}
+
+
+/* ── Global Scrollbar Styling ── */
+*{scrollbar-width:thin;scrollbar-color:rgba(79,195,247,.45) rgba(10,30,80,.15)}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:rgba(10,30,80,.1);border-radius:6px}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#4FC3F7,#0D47A1);border-radius:6px}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#81D4FA,#1565C0)}

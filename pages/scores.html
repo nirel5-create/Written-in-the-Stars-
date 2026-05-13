@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>כתוב בכוכבים — הישגים</title>
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/base.css">
+<link rel="stylesheet" href="../styles/login.css">
+<link rel="stylesheet" href="../styles/game-select.css">
+<link rel="stylesheet" href="../styles/games.css">
+<link rel="stylesheet" href="../styles/admin.css">
+<link rel="stylesheet" href="../styles/effects.css">
+<link rel="stylesheet" href="../styles/responsive.css">
+</head>
+<body data-page="scores">
+<canvas id="bg"></canvas>
+<div id="app"></div>
+<div id="modal-ov" class="hid"><div id="modal-box"></div></div>
+<div id="fx"></div>
+<div class="basad">בס"ד</div>
+<div class="logo-footer"><img src="../assets/logo.png" height="48" alt="מוחאחד" style="display:block;"></div>
+<div class="copyright">© כל הזכויות שמורות&nbsp;|&nbsp;<a href="tel:0533173011">053-317-3011</a></div>
+<script src="../scripts/core.js"></script>
+<script src="../scripts/achievements.js"></script>
+<script>
+if(!loadSession()){location.href='../index.html';}
+else go('achievements');
+</script>
+</body>
+</html>
