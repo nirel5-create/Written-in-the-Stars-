@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@700;900&display=swap');
+
+/* ── Decorative mascot (Nany) ── */
+.mascot{
+  position:fixed;pointer-events:none;z-index:6;
+  user-select:none;display:block;height:auto;
+}
+.mascot-big{width:clamp(160px,28vw,360px)}
+.mascot-medium{width:clamp(120px,20vw,240px)}
+.mascot-small{width:clamp(90px,14vw,160px)}
+.mascot-br{bottom:0;right:0}
+.mascot-bl{bottom:0;left:0}
+.mascot-bc{bottom:0;left:50%;transform:translateX(-50%)}
+.mascot-bmr{bottom:0;right:13%}
+@media(max-width:768px){.mascot-bmr{right:10%}}
+@media(max-width:480px){.mascot-bmr{right:4%}}
+@media(max-width:480px){#s-register .mascot-big{width:clamp(220px,52vw,320px)}}
+
+
+/* ── FIX: Stars bar centered ── */
+.stars-bar{
+  display:flex;gap:10px;align-items:center;
+  overflow-x:auto;overflow-y:visible;
+  padding:6px 12px 6px;
+  justify-content:safe center; /* 'safe' = fall back to flex-start on overflow */
+  scrollbar-width:thin;scrollbar-color:rgba(79,195,247,.4) transparent;
+  scroll-padding-inline:8px;
+  -webkit-overflow-scrolling:touch;
+}
+.stars-bar::-webkit-scrollbar{height:4px}
+.stars-bar::-webkit-scrollbar-thumb{background:rgba(79,195,247,.4);border-radius:2px}
+
+/* ── IMPROVED star fall animations ── */
+@keyframes starDrop{from{opacity:0;transform:translateY(-80px) scale(.5) rotate(-20deg)}to{opacity:1;transform:translateY(0) scale(1) rotate(0deg)}}
+@keyframes starDrop2{from{opacity:0;transform:translateY(-90px) translateX(-18px) scale(.4) rotate(25deg)}to{opacity:1;transform:translateY(0) translateX(0) scale(1) rotate(0deg)}}
+@keyframes starDrop3{from{opacity:0;transform:translateY(-70px) translateX(14px) scale(.6) rotate(-35deg)}to{opacity:1;transform:translateY(0) translateX(0) scale(1) rotate(0deg)}}
+@keyframes starDrop4{0%{opacity:0;transform:translateY(-100px) scale(.3) rotate(40deg)}70%{transform:translateY(8px) scale(1.1) rotate(-5deg)}100%{opacity:1;transform:translateY(0) scale(1) rotate(0deg)}}
+@keyframes starFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.gstar{
+  position:absolute;width:76px;height:76px;cursor:pointer;z-index:10;
+  display:flex;align-items:center;justify-content:center;
+}
+.gstar .ss{
+  position:absolute;width:100%;height:100%;
+  clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+  background:linear-gradient(150deg,#ffe566 0%,#ffc200 55%,#ff9800 100%);
+  box-shadow:0 4px 14px rgba(255,200,0,.45);transition:filter .15s;
+}
+.gstar:hover .ss{filter:brightness(1.2) drop-shadow(0 0 8px rgba(255,220,0,.8))}
+.gstar .sl{
+  position:relative;z-index:2;font-size:clamp(18px,3vw,26px);
+  font-weight:900;color:#2a0a00;text-align:center;
+  max-width:70px;overflow:hidden;line-height:1;pointer-events:none;direction:rtl;
+}
+.gstar.anim0{animation:starDrop .5s cubic-bezier(.34,1.2,.64,1) forwards}
+.gstar.anim1{animation:starDrop2 .6s cubic-bezier(.34,1.3,.64,1) forwards}
+.gstar.anim2{animation:starDrop3 .55s cubic-bezier(.34,1.1,.64,1) forwards}
+.gstar.anim3{animation:starDrop4 .7s cubic-bezier(.34,1.4,.64,1) forwards}
+.gstar.floating{animation:starFloat 2.5s ease-in-out infinite}
+
+/* ── Answer bar: RTL direction so first appended = rightmost ── */
+.ans-bar{
+  flex:1;min-height:64px;
+  background:rgba(180,220,255,.22);border:2px solid rgba(79,195,247,.45);
+  border-radius:16px;display:flex;align-items:center;
+  direction:rtl;flex-direction:row;justify-content:flex-start;
+  gap:5px;padding:6px 10px;flex-wrap:wrap;overflow:hidden;
+}
+
+/* ── Resume box on instruction screens ── */
+.resume-box{
+  background:linear-gradient(135deg,rgba(79,195,247,.12),rgba(13,71,161,.15));
+  border:1.5px solid rgba(79,195,247,.45);
+  border-radius:16px;padding:16px 18px;margin-top:10px;
+  display:flex;flex-direction:column;gap:12px;align-items:center;
+}
+.resume-info{
+  font-size:16px;font-weight:700;color:var(--navy);text-align:center;
+  display:flex;align-items:center;gap:8px;
+}
+.resume-info strong{color:#0D47A1;font-size:18px;}
+.resume-btns{display:flex;flex-direction:column;gap:8px;width:100%;align-items:center}
+.resume-btns .btn{width:100%;justify-content:center;max-width:320px;}
+
+/* ── Word counter badge in play screen ── */
+.word-ctr{
+  font-size:13px;font-weight:700;color:rgba(255,255,255,.65);
+  background:rgba(10,30,80,.5);border-radius:20px;padding:4px 12px;
+}
+
+/* ── Improved game stars ── */
+.gstar{
+  position:absolute;width:100px;height:100px;cursor:pointer;z-index:10;
+  display:flex;align-items:center;justify-content:center;
+  filter:drop-shadow(0 2px 6px rgba(255,180,0,.35));
+}
+.gstar .ss{
+  position:absolute;width:100%;height:100%;
+  clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+  background:linear-gradient(160deg,#fff5a0 0%,#ffe033 30%,#ffaa00 70%,#ff8800 100%);
+  transition:filter .12s;
+}
+.gstar:hover{filter:drop-shadow(0 0 12px rgba(255,220,0,.9));transform:scale(1.08)}
+.gstar .sl{
+  position:relative;z-index:2;font-size:clamp(22px,3.5vw,30px);
+  font-weight:900;color:#2a0800;text-align:center;
+  max-width:84px;overflow:visible;line-height:1.5;pointer-events:none;direction:rtl;
+  text-shadow:0 1px 2px rgba(255,255,255,.5);
+}
+.gstar .sl-final{
+  font-family:'Noto Sans Hebrew',sans-serif;
+}
+
+/* ── Improved answer star slots ── */
+.aslot{
+  width:60px;height:52px;display:flex;align-items:center;
+  justify-content:center;position:relative;
+  animation:slotIn .4s cubic-bezier(.34,1.56,.64,1);
+  filter:drop-shadow(0 2px 5px rgba(255,180,0,.4));
+}
+.aslot .ss{
+  position:absolute;width:100%;height:100%;
+  clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+  background:linear-gradient(160deg,#fff5a0,#ffd700,#ff9800);
+}
+.aslot .sl{position:relative;z-index:2;font-size:17px;font-weight:900;color:#2a0800;direction:rtl;text-shadow:0 1px 1px rgba(255,255,255,.4)}
+
+/* ── Improved level-star bar stars ── */
+.lv-star .ss{
+  position:absolute;width:100%;height:100%;
+  clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+  transition:background .3s;
+}
+.lv-star.done .ss{background:linear-gradient(160deg,#fff176,#FFD700,#FF8C00);filter:drop-shadow(0 1px 3px rgba(255,180,0,.5))}
+.lv-star.cur .ss{background:linear-gradient(160deg,#80d8ff,#4FC3F7,#0288D1)}
+.lv-star.cur .sn{color:#fff;text-shadow:0 0 4px rgba(0,100,200,.6)}
+.lv-star.lock .ss{background:linear-gradient(135deg,#CFD8DC,#90A4AE)}
+
+/* ── Better lv-badge ── */
+.lv-badge-wrap{position:relative;width:52px;height:52px;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 2px 8px rgba(255,180,0,.5))}
+.lv-badge .ss{
+  width:52px;height:52px;
+  clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+  background:linear-gradient(160deg,#fff176,#FFD700,#FF8C00);
+  display:flex;align-items:center;justify-content:center;
+}
+.lv-badge .bn{position:absolute;font-size:16px;font-weight:900;color:#2a0800;text-shadow:0 1px 1px rgba(255,255,255,.4)}
+@keyframes flashBlue{0%{background:rgba(79,195,247,.5)}100%{background:transparent}}
+@keyframes flashRed{0%{background:rgba(255,50,50,.5)}100%{background:transparent}}
+.flash-blue{animation:flashBlue .9s ease forwards}
+.flash-red{animation:flashRed .9s ease forwards}
+
+/* ── Student detail modal ── */
+.st-modal{direction:rtl;text-align:right}
+.st-modal-header{
+  display:flex;align-items:center;gap:14px;
+  padding:18px 20px;
+  background:linear-gradient(135deg,var(--navy),#1a3a70);
+  border-radius:18px;margin-bottom:18px;
+}
+.st-modal-av{font-size:44px;line-height:1}
+.st-modal-info h2{font-family:var(--ftitle);font-size:22px;color:#fff;margin-bottom:2px}
+.st-modal-info .st-since{font-size:12px;color:rgba(255,255,255,.5)}
+.st-stats-row{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.st-stat{
+  flex:1;min-width:80px;background:rgba(79,195,247,.12);
+  border:1px solid rgba(79,195,247,.3);border-radius:14px;
+  padding:12px 10px;text-align:center;
+}
+.st-stat .sval{font-size:22px;font-weight:900;color:var(--navy)}
+.st-stat .slbl{font-size:11px;color:rgba(10,30,100,.6);margin-top:2px}
+.st-games{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+.st-game-row{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(10,30,80,.06);border-radius:12px;padding:9px 12px;
+}
+.st-game-ico{font-size:18px;flex-shrink:0}
+.st-game-nm{font-size:14px;font-weight:700;color:var(--navy);flex:1}
+.st-game-prog{display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+.st-pbar-wrap{width:80px;height:6px;background:rgba(10,30,80,.15);border-radius:3px;overflow:hidden}
+.st-pbar{height:100%;border-radius:3px;background:linear-gradient(90deg,#4FC3F7,#0D47A1)}
+.st-pval{font-size:11px;color:rgba(10,30,100,.5)}
+/* EXTREME FIX - Very big stars */
+/* .gstar{
+  width:110px !important;
+  height:110px !important;
+}
+
+.gstar .sl{
+  font-size:30px !important;
+  line-height:2.5 !important;
+  padding:12px 0 !important;
+  min-height:60px !important;
+} */
