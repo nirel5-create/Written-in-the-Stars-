@@ -300,3 +300,131 @@
   #pl-area .btn{font-size:12px;padding:8px 12px}
   .link-btn{font-size:10px;margin-top:8px}
 }
+
+/* ── Large desktop (≥ 1280px): upsize game-select content (gamesel only) ── */
+@media(min-width:1280px){
+  /* Title — bump above the clamp ceiling */
+  #s-gamesel .gsel-top .stitle{font-size:52px;margin-bottom:12px}
+
+  /* Game cards — roomier, larger */
+  #s-gamesel .game-card{min-width:230px;max-width:280px;padding:32px 24px;border-radius:24px}
+  #s-gamesel .gc-icon{font-size:48px;margin-bottom:14px}
+  #s-gamesel .gc-title{font-size:26px;min-height:72px}
+
+  /* Carousel arrows */
+  #s-gamesel .carr-arrow{width:50px;height:50px;font-size:23px}
+
+  /* Level stars row */
+  #s-gamesel .lv-star{width:62px;height:62px}
+  #s-gamesel .lv-star .sn{font-size:15px}
+  #s-gamesel .stars-bar-label{font-size:15px}
+
+  /* Bottom buttons */
+  #s-gamesel .gsel-btns .btn{font-size:19px;padding:15px 30px;border-radius:16px}
+}
+
+/* ── Large desktop (≥ 1280px): upsize achievements/scores screen ── */
+@media(min-width:1280px){
+  #s-achievements .ach-wrap{max-width:760px}
+  #s-achievements .ach-title{font-size:36px;margin-bottom:22px}
+  #s-achievements .cups-row{gap:24px;margin-bottom:28px}
+  #s-achievements .cup-puzzle{width:122px;height:144px}
+  #s-achievements .cup-title{font-size:16px}
+  #s-achievements .cp-complete-icon{font-size:44px}
+  #s-achievements .words-done{padding:20px 26px;border-radius:22px}
+  #s-achievements .words-done h4{font-size:20px;margin-bottom:14px}
+  #s-achievements .wchip{font-size:17px;padding:7px 16px;border-radius:20px}
+}
+
+/* ── Very large desktop (≥ 1800px): upsize play page — INSTRUCTION screens only ── */
+@media(min-width:1800px){
+  body[data-page="play"] .inst-card{max-width:600px}
+  body[data-page="play"] .inst-card h3{font-size:27px;margin-bottom:20px}
+  body[data-page="play"] .inst-card p{font-size:18px;margin-bottom:16px}
+  body[data-page="play"] .listen-btn{font-size:17px;padding:12px 22px;border-radius:13px}
+  body[data-page="play"] .resume-box{padding:18px 20px;border-radius:18px}
+  body[data-page="play"] .resume-info{font-size:18px}
+  body[data-page="play"] .resume-info strong{font-size:20px}
+}
+
+/* ── Large desktop (≥ 1500px): upsize play page — GAME screens (all 4 games) ── */
+@media(min-width:1500px){
+  /* — Shared play UI (header / counter / answer bar) — */
+  body[data-page="play"] .play-title{font-size:32px}
+  body[data-page="play"] .word-ctr{font-size:15px;padding:5px 14px}
+  body[data-page="play"] .listen-mini{font-size:16px;padding:9px 16px;border-radius:13px}
+  body[data-page="play"] .timer-txt{font-size:15px}
+
+  /* — Stars (gstar) — */
+  body[data-page="play"] .gstar{width:110px;height:110px}
+  body[data-page="play"] .gstar .sl{font-size:33px;max-width:92px}
+
+  /* — Answer bar / slots — */
+  body[data-page="play"] .ans-bar{min-height:70px;padding:7px 12px;border-radius:18px}
+  body[data-page="play"] .aslot{width:66px;height:57px}
+  body[data-page="play"] .aslot .sl{font-size:19px}
+
+  /* — Fixed corner elements — */
+  body[data-page="play"] .lv-badge-wrap{width:57px;height:57px}
+  body[data-page="play"] .lv-badge .ss{width:57px;height:57px}
+  body[data-page="play"] .lv-badge .bn{font-size:18px}
+  body[data-page="play"] .back-btn{padding:10px 20px;font-size:16px;border-radius:26px}
+
+  /* — Game 2: image box — */
+  body[data-page="play"] .img-box{width:165px;height:154px;font-size:77px}
+
+  /* — Game 3: math box + answer stars — */
+  body[data-page="play"] .math-box{font-size:40px;padding:18px 40px}
+  body[data-page="play"] .math-ans-star{width:55px;height:55px}
+  body[data-page="play"] .math-ans-star span{font-size:17px}
+
+  /* — Game 4: nikud table — */
+  body[data-page="play"] .nikud-panel{width:132px}
+  body[data-page="play"] .ncard{font-size:31px;padding:18px 8px}
+  body[data-page="play"] .nikud-tbl th{font-size:33px;padding:22px 36px}
+  body[data-page="play"] .nikud-tbl td{font-size:35px;padding:26px 38px;min-width:143px}
+  body[data-page="play"] .nikud-phase-btn{font-size:18px;padding:12px 24px}
+}
+
+/* ── Back button: faded when idle so it doesn't obscure the first star/card,
+      full opacity on hover/focus. Play page only. ── */
+body[data-page="play"] .back-btn{opacity:.45}
+body[data-page="play"] .back-btn:hover,
+body[data-page="play"] .back-btn:focus-visible{opacity:1}
+
+/* ── Large desktop (≥ 1280px): upsize admin page (all 5 screens) ── */
+@media(min-width:1280px){
+  /* — Main menu (#s-admin) — */
+  #s-admin .admin-card{max-width:540px}
+  #s-admin .admin-card h2{font-size:27px;margin-bottom:22px}
+  #s-admin .amenu{gap:14px}
+  #s-admin .amenu-btn{padding:18px 24px;font-size:20px;border-radius:18px}
+
+  /* — Management screens (words / math / levels — shared .mgmt-card) — */
+  body[data-page="admin"] .mgmt-card{max-width:700px}
+  body[data-page="admin"] .mgmt-card h2{font-size:25px;margin-bottom:18px}
+  body[data-page="admin"] .word-inp{font-size:19px;padding:12px 16px}
+  body[data-page="admin"] .word-list{max-height:260px}
+  body[data-page="admin"] .wi{padding:11px 14px}
+  body[data-page="admin"] .wi .wt{font-size:21px}
+  body[data-page="admin"] .wi .wp{font-size:13px}
+  body[data-page="admin"] .del-btn{font-size:14px;padding:5px 12px}
+  body[data-page="admin"] .bulk-ta{font-size:14px;height:80px}
+  body[data-page="admin"] .img-upload{font-size:14px;padding:13px}
+  body[data-page="admin"] .tab{font-size:14px;padding:8px 16px}
+  body[data-page="admin"] .mopt{font-size:15px;padding:10px 18px}
+
+  /* — Students tracking (#s-admin-students) — */
+  #s-admin-students .stgrid-title{font-size:27px;margin-bottom:14px}
+  #s-admin-students .stgrid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  #s-admin-students .stcard{padding:16px 12px;border-radius:20px}
+  #s-admin-students .st-av{font-size:38px;margin-bottom:7px}
+  #s-admin-students .st-name{font-size:17px}
+  #s-admin-students .st-score{font-size:13px}
+  #s-admin-students .lb-panel{width:230px;padding:18px;border-radius:24px}
+  #s-admin-students .lb-panel h3{font-size:19px;margin-bottom:14px}
+  #s-admin-students .lb-item{padding:8px 11px}
+  #s-admin-students .lb-rk{font-size:19px;min-width:28px}
+  #s-admin-students .lb-nm{font-size:16px}
+  #s-admin-students .lb-sc{font-size:15px}
+}
